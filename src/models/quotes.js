@@ -5,7 +5,7 @@ import res from "express/lib/response.js";
 
 // Connect based on the .env file parameters.
 mongoose.connect(
-    process.env.MONGODB_CONNECT_STRING,
+    process.env.MONGODB_URI,
     {useNewUrlParser: true}
 );
 const db = mongoose.connection;
