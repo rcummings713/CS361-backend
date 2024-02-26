@@ -9,6 +9,9 @@ const app = express();
 app.use(express.json());  // REST needs JSON MIME type.
 
 // CREATE controller ******************************************
+app.get("/", (req, res) => {
+    res.send("<h1>Api is listening</h1>")
+})
 app.post('/createJournal', (req, res) => {
     console.log('TESTING CREATE');
     console.log(req.body);
@@ -91,8 +94,8 @@ app.get('/getQuote', (req, res) => {
     })
 })
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`);
+app.listen(process.env.PORT || 4200, () => {
+    console.log(`Server listening...`);
 });
 
 
