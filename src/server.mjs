@@ -119,7 +119,9 @@ app.get('/getWorkoutProgram', (req, res) => {
         } else {
             models.workoutProgram.retrieveProgramByName(req.query.programName).then(programs => {
                 const returnJSON = JSON.stringify(programs);
-                res.status(200).json(returnJSON);
+                // res.status(200).json(returnJSON);
+                res.header("Content-Type", 'application/json');
+                res.status(200).send(JSON.stringify(returnJSON, null, 4));
             })
         }
     } catch (error) {
