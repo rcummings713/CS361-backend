@@ -121,6 +121,7 @@ app.get('/getWorkoutProgram', (req, res) => {
             models.workoutProgram.retrieveProgramByName(req.query.programName).then(programs => {
                 const returnJSON = prettier.format(JSON.stringify(programs), {parser: 'json'});
                 // res.status(200).json(returnJSON);
+                console.log(returnJSON);
                 res.header("Content-Type", 'application/json');
                 res.status(200).send(returnJSON);
             })
