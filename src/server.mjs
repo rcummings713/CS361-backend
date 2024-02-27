@@ -118,7 +118,8 @@ app.get('/getWorkoutProgram', (req, res) => {
             res.status(400).json({Error: 'Bad Request: parameter provided is not a program!'});
         } else {
             models.workoutProgram.retrieveProgramByName(req.query.programName).then(programs => {
-                res.status(200).json(programs);
+                const returnJSON = JSON.stringify(programs);
+                res.status(200).json(returnJSON);
             })
         }
     } catch (error) {
