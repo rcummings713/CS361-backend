@@ -1,0 +1,112 @@
+POST http://localhost:4200/addProgram HTTP/1.1
+content-type: application/json
+
+{
+  "programName": "Hybrid",
+  "monday": [
+    {
+      "exercise": "Bench Press",
+      "exerciseType": "Weight lifting",
+      "sets": 4,
+      "reps": 6,
+      "rest": 2
+    },
+    {
+      "exercise": "Lat Pulldown",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 2
+    },
+    {
+      "exercise": "Barbell Overhead Press",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 2
+    },
+    {
+      "exercise": "Seated T-Bar Row",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 2
+    },
+    {
+      "exercise": "Dumbbell Incline Press",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 8,
+      "rest": 2
+    },
+    {
+      "exercise": "Tricep Skull Crusher",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 1
+    },
+    {
+      "exercise": "Dumbbell Bar Curl",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 1
+    }
+  ],
+  "tuesday": [
+    {
+      "exercise": "Back Squat",
+      "exerciseType": "Weight lifting",
+      "sets": 4,
+      "reps": 4,
+      "rest": 4
+    },
+    {
+      "exercise": "Stiff Leg-Deadlift",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 2
+    },
+    {
+      "exercise": "Dumbbell Walking Lunge",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 2
+    },
+    {
+      "exercise": "Seated Leg Curl",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 1
+    },
+    {
+      "exercise": "Cable Pull Through",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 1
+    }
+  ],
+  "wednesday": [],
+  "thursday": [
+    {
+      "exercise": "Endurance Running - 3 miles",
+      "exerciseType": "Cardio Running"
+    }
+  ],
+  "friday": [
+    {
+      "exercise": "Hill Sprints",
+      "exerciseType": "Cardio Sprints",
+      "sets": 8,
+      "reps": 1,
+      "rest": 1
+    }
+  ],
+  "saturday": [],
+  "sunday": []
+}

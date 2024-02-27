@@ -1,0 +1,185 @@
+POST http://localhost:4200/addProgram HTTP/1.1
+content-type: application/json
+
+{
+  "programName": "Build Muscle",
+  "monday": [
+    {
+      "exercise": "Bench Press",
+      "exerciseType": "Weight lifting",
+      "sets": 4,
+      "reps": 6,
+      "rest": 2
+    },
+    {
+      "exercise": "Lat Pulldown",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 2
+    },
+    {
+      "exercise": "Barbell Overhead Press",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 2
+    },
+    {
+      "exercise": "Seated T-Bar Row",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 2
+    },
+    {
+      "exercise": "Dumbbell Incline Press",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 8,
+      "rest": 2
+    },
+    {
+      "exercise": "Tricep Skull Crusher",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 1
+    },
+    {
+      "exercise": "Dumbbell Bar Curl",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 1
+    }
+  ],
+  "tuesday": [
+    {
+      "exercise": "Back Squat",
+      "exerciseType": "Weight lifting",
+      "sets": 4,
+      "reps": 4,
+      "rest": 4
+    },
+    {
+      "exercise": "Stiff Leg-Deadlift",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 2
+    },
+    {
+      "exercise": "Dumbbell Walking Lunge",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 2
+    },
+    {
+      "exercise": "Seated Leg Curl",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 1
+    },
+    {
+      "exercise": "Cable Pull Through",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 1
+    }
+  ],
+  "wednesday": [],
+  "thursday": [
+    {
+      "exercise": "Wide Grip Pull Up",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 6,
+      "rest": 2
+    },
+    {
+      "exercise": "Barbell Incline Press",
+      "exerciseType": "Weight lifting",
+      "sets": 4,
+      "reps": 8,
+      "rest": 2
+    },
+    {
+      "exercise": "Pendlay Row",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 10,
+      "rest": 3
+    },
+    {
+      "exercise": "Cable Flyes",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 21,
+      "rest": 2
+    },
+    {
+      "exercise": "Face Pull",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 2
+    },
+    {
+      "exercise": "Machine Lateral Raise",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 1
+    },
+    {
+      "exercise": "Supinated Dumbbell Curl",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 15,
+      "rest": 1
+    }
+  ],
+  "friday": [
+    {
+      "exercise": "Deadlift",
+      "exerciseType": "Weight lifting",
+      "sets": 2,
+      "reps": 5,
+      "rest": 5
+    },
+    {
+      "exercise": "Back Squat",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 8,
+      "rest": 3
+    },
+    {
+      "exercise": "Barbell Hip Thrust",
+      "exerciseType": "Weight lifting",
+      "sets": 4,
+      "reps": 12,
+      "rest": 2
+    },
+    {
+      "exercise": "Leg Extension",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 12,
+      "rest": 2
+    },
+    {
+      "exercise": "Leg Curl",
+      "exerciseType": "Weight lifting",
+      "sets": 3,
+      "reps": 20,
+      "rest": 1
+    }
+  ],
+  "saturday": [],
+  "sunday": []
+}

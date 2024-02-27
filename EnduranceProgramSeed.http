@@ -1,0 +1,36 @@
+POST http://localhost:4200/addProgram HTTP/1.1
+content-type: application/json
+
+{
+  "programName": "Endurance",
+  "monday": [
+    {
+      "exercise": "Endurance Running - 3 miles",
+      "exerciseType": "Cardio Running"
+    }
+  ],
+  "tuesday": [],
+  "wednesday": [
+    {
+      "exercise": "Hill Sprints",
+      "exerciseType": "Cardio Sprints",
+      "sets": 8,
+      "reps": 1,
+      "rest": 1
+    }
+  ],
+  "thursday": [
+    {
+      "exercise": "Endurance Running - 6 miles",
+      "exerciseType": "Cardio Running"
+    }
+  ],
+  "friday": [],
+  "saturday": [
+    {
+      "exercise": "Walk - 1 miles",
+      "exerciseType": "Cardio Walking"
+    }
+  ],
+  "sunday": []
+}

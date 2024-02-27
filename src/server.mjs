@@ -94,6 +94,39 @@ app.get('/getQuote', (req, res) => {
     })
 })
 
+app.post('/addProgram', (req, res) => {
+        let {programName, monday, tuesday, wednesday, thursday, friday, saturday, sunday} = req.body
+        console.log(monday)
+        models.workoutProgram.createWorkoutProgram(programName, monday, tuesday, wednesday, thursday, friday, saturday, sunday
+        ).then((result) => {
+            console.log("final", result);
+            res.status(200).json(result);
+        }).catch(err => {
+            res.status(400).json({Error: 'Bad Request: issue with request made to server'});
+        })
+    }
+)
+
+app.get('/getWorkoutProgram', (req, res) => {
+    try {
+        console.log('TESTING GET PROGRAMS');
+        console.log(req.query.programName);
+        const programs = ["Endurance", "Build Muscle", "Hybrid"]
+        if (!req.query.programName) {
+            res.status(400).json({Error: 'Bad Request: missing parameter'});
+        } else if (!programs.includes(req.query.programName)) {
+            res.status(400).json({Error: 'Bad Request: parameter provided is not a program!'});
+        } else {
+            models.workoutProgram.retrieveProgramByName(req.query.programName).then(programs => {
+                res.status(200).json(programs);
+            })
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({Error: 'Bad Request: issue with request made to server'});
+    }
+})
+
 app.listen(process.env.PORT || 4200, () => {
     console.log(`Server listening...`);
 });
