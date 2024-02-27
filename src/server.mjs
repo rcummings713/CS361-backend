@@ -3,8 +3,7 @@
 import 'dotenv/config';
 import express from 'express';
 import * as models from './models/index.js';
-
-const cors = require('cors');
+import * as cors from 'cors';
 
 const PORT = process.env.PORT;
 const app = express();
