@@ -3,6 +3,7 @@
 import 'dotenv/config';
 import express from 'express';
 import * as models from './models/index.js';
+import * as prettier from 'prettier'
 
 const PORT = process.env.PORT;
 const app = express();
@@ -121,7 +122,10 @@ app.get('/getWorkoutProgram', (req, res) => {
                 const returnJSON = JSON.stringify(programs);
                 // res.status(200).json(returnJSON);
                 res.header("Content-Type", 'application/json');
-                res.status(200).send(JSON.stringify(returnJSON, null, 4));
+                res.status(200).send(prettier.format(JSON.stringify(returnJSON, null, 4), {
+                    semi: false,
+                    parser: "json"
+                }));
             })
         }
     } catch (error) {
