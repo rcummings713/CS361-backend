@@ -56,7 +56,7 @@ const createWorkoutProgram = async (programName, monday, tuesday, wednesday, thu
 }
 
 const retrieveProgramByName = async (program) => {
-    const query = WorkoutProgram.find({programName: program});
+    const query = WorkoutProgram.find({programName: program}, {_id: 0});
     return query.exec();
 }
 
