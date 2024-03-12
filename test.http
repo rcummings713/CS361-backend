@@ -38,3 +38,18 @@ content-type: application/json
 GET http://localhost:4200/getWorkoutProgram?programName=Hybrid HTTP/1.1
 content-type: application/json
 
+### Find program
+GET https://fitjournal-api-ca964984ffd7.herokuapp.com/getWorkoutProgram?programName=Build Muscle HTTP/1.1
+content-type: application/json
+
+### CREATE user
+POST http://localhost:4200/createUser HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Test workout",
+  "lastName": "Great workout",
+  "email": "test@example.com",
+  "userName": "test",
+  "password": "testing"
+}

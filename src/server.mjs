@@ -149,6 +149,51 @@ app.get('/getWorkoutProgram', (req, res) => {
     }
 })
 
+app.post('/createUser', (req, res) => {
+    console.log('TESTING CREATE USER');
+    console.log(req.body);
+    const {firstName, lastName, email, userName, password} = req.body;
+    console.log(firstName, lastName, email, userName, password);
+    try {
+        models.user.createUser(
+            firstName,
+            lastName,
+            email,
+            userName,
+            password
+        ).then(newUser => {
+            console.log(newUser);
+            res.status(200).json({Success: 'User created successfully'});
+        })
+    } catch (error) {
+        console.error(error);
+        res.status(400).json({Error: 'Bad Request: issue with request made to server'});
+    }
+})
+
+app.post('/getUser', (req, res) => {
+    console.log('FINDING USER')
+    const {userName, password} = req.body;
+    console.log(userName, password);
+    try {
+        models.user.findUser(userName, password).then(existingUser => {
+            console.log(existingUser);
+            if (existingUser) {
+                console.log("Credentials are valid.");
+                console.log(existingUser)
+                // Return any additional information if needed
+                res.status(200).send(JSON.stringify(existingUser));
+            } else {
+                console.log("Invalid credentials.");
+                res.status(400).json({Error: 'Invalid User'});
+            }
+        })
+    } catch (error) {
+        console.error("Error checking credentials:", error);
+        res.status(400).json({Error: 'Bad Request: issue with request made to server'})
+    }
+})
+
 app.listen(process.env.PORT || 4200, () => {
     console.log(`Server listening...`);
 });
