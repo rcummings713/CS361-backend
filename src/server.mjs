@@ -194,6 +194,61 @@ app.post('/getUser', (req, res) => {
     }
 })
 
+app.post('/createWorkoutTemplate', (req, res) => {
+    console.log('TESTING CREATE WORKOUT TEMPLATE');
+    console.log(req.body);
+    models.workoutTemplate.createTemplate(
+        req.body[0].templateName,
+        req.body[0].description,
+        new Date().toLocaleString()
+    ).then(newTemplate => {
+        console.log(req.body)
+        Object.values(req.body).slice(1).forEach(exercise => {
+            models.journalExercise.createExercise(
+                exercise.exercise,
+                exercise.exerciseType,
+                exercise.sets,
+                exercise.reps,
+                exercise.rest,
+                exercise.load
+            ).then(exerciseCreated => {
+                console.log(exerciseCreated);
+                console.log(newTemplate._id);
+                models.workoutTemplate.WorkoutTemplate.findByIdAndUpdate(
+                    newTemplate._id.toString(),
+                    {$push: {exercises: exerciseCreated}},
+                    {new: true, useFindAndModify: false},
+                    () => console.log("updated template", newTemplate._id)
+                )
+            })
+        })
+        res.status(200).json(newTemplate);
+    })
+});
+
+app.get('/getWorkoutTemplates', (req, res) => {
+    console.log('TESTING GET TEMPLATES');
+    models.workoutTemplate.retrieveTemplates().then(templates => {
+        console.log(templates);
+        res.status(200).json(templates);
+    })
+})
+
+app.delete(`/deleteWorkoutTemplate/:id`, (req, res) => {
+    console.log("GIVEN", req.params);
+    models.workoutTemplate.deleteTemplateById(req.params.id).then((deletedCount) => {
+        if (deletedCount === 1) {
+            console.log(`Based on its ID, ${deletedCount} journal was deleted.`);
+            res.status(200).send({Success: 'Success: template deleted'});
+        } else {
+            res.status(404).json({Error: 'Not found: template associated provided id was not found'});
+        }
+    }).catch(error => {
+        console.error(error);
+        res.status(400).json({Error: 'Bad Request: issue with request made to server'});
+    });
+})
+
 app.listen(process.env.PORT || 4200, () => {
     console.log(`Server listening...`);
 });

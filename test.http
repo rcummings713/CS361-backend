@@ -53,3 +53,30 @@ content-type: application/json
   "userName": "test",
   "password": "testing"
 }
+
+### CREATE template
+POST http://localhost:4200/createWorkoutTemplate HTTP/1.1
+content-type: application/json
+
+{
+  "0": {
+    "templateName": "Test template",
+    "description": "build strength"
+  },
+  "1": {
+    "exercise": "Bench press",
+    "exerciseType": "Weight lifting",
+    "sets": 5,
+    "reps": 10,
+    "rest": 100,
+    "load": 30
+  },
+  "2": {
+    "exercise": "Squat",
+    "exerciseType": "Weight lifting",
+    "sets": 7,
+    "reps": 13,
+    "rest": 200,
+    "load": 50
+  }
+}
